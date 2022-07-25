@@ -3,7 +3,7 @@ import CategoryPill from "./CategoryPill";
 import Link from "next/link";
 import Image from "next/image";
 import te from "../images/asset.jpg";
-function OtherHero({ heroPosts }) {
+function OtherHero({ heroPosts }: any) {
   var randomPostIndex = Math.floor(Math.random() * 100);
   return (
     <section className="flex flex-wrap md:my-10 text-zinc-100">

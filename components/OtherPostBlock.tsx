@@ -5,7 +5,7 @@ import CategoryPill from "./CategoryPill";
 import Link from "next/link";
 import { MdOutlineAccessTime } from "react-icons/md";
 
-function OtherPostBlock({ otherPost }) {
+function OtherPostBlock({ otherPost }: any) {
   return (
     <section
       className="flex flex-wrap md:justify-between justify-center items-center text-zinc-200 md:my-0 my-10  
