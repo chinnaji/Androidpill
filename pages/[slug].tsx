@@ -8,10 +8,17 @@ import { MdOutlineAccessTime } from "react-icons/md";
 import PostScreenshot from "../components/PostScreenshot";
 import DownloadLinks from "../components/DownloadLinks";
 import NativeBanners from "../components/ads/NativeBanners";
+import ReadAlso from "../components/ReadAlso";
 import Head from "next/head";
 // import { Nav, Button } from '../../components'
 
-const components = { Image, PostScreenshot, DownloadLinks, NativeBanners };
+const components = {
+  Image,
+  PostScreenshot,
+  DownloadLinks,
+  NativeBanners,
+  ReadAlso,
+};
 
 const PostPage = ({
   frontMatter: { title, description, date, thumbnailUrl, imageFolder },
@@ -50,7 +57,7 @@ const PostPage = ({
         <meta name="twitter:data1" content="chibuike Nnaji" />
         <meta name="twitter:label2" content="Est. reading time" />
       </Head>
-      <main className="mt-4 max-w-6xl mx-auto p-2 blogpost">
+      <article className="mt-4 max-w-6xl mx-auto p-2 blogpost">
         <h1 className="lg:text-4xl text-3xl font-semibold mt-16 lg:mt-10 mb-5 text-zinc-100 text-center">
           {title}
         </h1>
@@ -73,7 +80,7 @@ const PostPage = ({
 
         {/* Native banner advertisement type 1 */}
         <NativeBanners type={1} />
-      </main>
+      </article>
     </>
   );
 };

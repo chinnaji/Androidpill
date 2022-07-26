@@ -5,6 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import MainHero from "../components/MainHero";
 import Head from "next/head";
+import TrendingSection from "../components/TrendingSection";
 
 export interface postData {
   frontMatter: FrontMatter;
@@ -24,10 +25,11 @@ interface indexProps {
 }
 
 const Home = ({ posts }: indexProps) => {
+  // console.log(posts.slice(5, 11));
   const heroPosts = posts.slice(0, 5);
   // console.log(posts);
   return (
-    <>
+    <main>
       <Head>
         <meta charSet="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -88,45 +90,18 @@ const Home = ({ posts }: indexProps) => {
         />
       </Head>
 
-      <MainHero heroPosts={heroPosts} />
-    </>
-    // <div className="mt-5">
-    //   {posts.map((post: any, index: any) => (
-    //     <>
-    //       <Link href={"/" + post.slug} passHref key={index}>
-    //         <a className="text-black">dsdsds</a>
-    //       </Link>
-
-    //       <Link href={"/" + post.slug} passHref key={index}>
-    //         <div className="card mb-3 pointer" style={{ maxWidth: "540px" }}>
-    //           <div className="row g-0">
-    //             <div className="col-md-8">
-    //               <div className="card-body">
-    //                 <h5 className="card-title">{post.frontMatter.title}</h5>
-    //                 <p className="card-text">{post.frontMatter.description}</p>
-    //                 <p className="card-text">
-    //                   <small className="text-muted">
-    //                     {post.frontMatter.date}
-    //                   </small>
-    //                 </p>
-    //               </div>
-    //             </div>
-    //             <div className="col-md-4 m-auto">
-    //               <Image
-    //                 src={post.frontMatter.thumbnailUrl}
-    //                 className="img-fluid mt-1 rounded-start"
-    //                 alt="thumbnail"
-    //                 width={500}
-    //                 height={400}
-    //                 objectFit="cover"
-    //               />
-    //             </div>
-    //           </div>
-    //         </div>
-    //       </Link>
-    //     </>
-    //   ))}
-    // </div>
+      <MainHero
+        heroPosts={heroPosts
+          .sort((a, b) => {
+            return (
+              new Date(b.frontMatter.date).getTime() -
+              new Date(a.frontMatter.date).getTime()
+            );
+          })
+          .reverse()}
+      />
+      <TrendingSection trendingPosts={posts.slice(5, 11)} />
+    </main>
   );
 };
 

@@ -5,8 +5,8 @@ import CategoryPill from "./CategoryPill";
 import Link from "next/link";
 
 function MainHero({ heroPosts }: any) {
-  const [firstPostItem, ...remPosts] = heroPosts.sort().reverse();
-  console.log(heroPosts);
+  const [firstPostItem, ...remPosts] = heroPosts;
+  // console.log(heroPosts);
   return (
     <>
       <section className="max-w-6xl mx-auto flex flex-wrap text-zinc-50 my-10 md:my-20">
