@@ -65,7 +65,7 @@ const PostPage = ({
           <MdOutlineAccessTime className="mr-2 text-xl" />{" "}
           <span className="fon-semibold">{date}</span>
         </p>
-        <div className="relative w-full mt-5 mb-10 h-[240px] md:h-[300px] mx-auto lg:h-[500px]  ">
+        <div className="relative w-full mt-5 mb-10 h-[220px] md:h-[300px] mx-auto lg:h-[500px]  ">
           <Image
             src={thumbnailUrl}
             layout="fill"
