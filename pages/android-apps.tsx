@@ -90,11 +90,11 @@ const androidApps = ({ posts }: indexProps) => {
       <h1 className="text-center text-zinc-100 font-semibold text-2xl md:text-3xl my-10">
         ANDROID APPS 🍏
       </h1>
-      <OtherHero heroPosts={posts.slice(0, 3)} />
-      {/* <OtherPostsSection otherPosts={posts.slice(3)} /> */}
+      <OtherHero heroPosts={posts[0]} />
+      <OtherPostsSection otherPosts={posts.slice(1)} />
 
       <NativeBanners type={2} />
-      <OtherPostsSection otherPosts={posts.slice(1)} />
+      {/* <OtherPostsSection otherPosts={posts.slice(1)} /> */}
     </main>
   );
 };
