@@ -31,7 +31,7 @@ const Home = ({ posts }: indexProps) => {
   const heroPosts = posts.slice(0, 5);
 
   return (
-    <main className=" md:px-2 max-w-6xl mx-auto">
+    <main className=" px-3 max-w-6xl mx-auto">
       <Head>
         <meta charSet="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
