@@ -5,11 +5,12 @@ import Link from "next/link";
 import Image from "next/image";
 import MainHero from "../components/MainHero";
 import Head from "next/head";
+
+import NativeBanners from "../components/ads/NativeBanners";
+import OtherHero from "../components/OtherHero";
 import TrendingSection from "../components/TrendingSection";
 import OtherPostsSection from "../components/OtherPostsSection";
 import NoticeBoard from "../components/NoticeBoard";
-import NativeBanners from "../components/ads/NativeBanners";
-import OtherHero from "../components/OtherHero";
 export interface postData {
   frontMatter: FrontMatter;
   slug: string;
@@ -90,11 +91,10 @@ const tipsntricks = ({ posts }: indexProps) => {
       <h1 className="text-center text-zinc-100 font-semibold text-2xl md:text-3xl my-10">
         TIPS N&apos; TRICKS
       </h1>
-      <OtherHero heroPosts={posts.slice(0, 3)} />
+      <OtherHero heroPosts={posts[0]} />
       {/* <OtherPostsSection otherPosts={posts.slice(3)} /> */}
 
       <NativeBanners type={2} />
-      <OtherPostsSection otherPosts={posts.slice(1)} />
     </main>
   );
 };
