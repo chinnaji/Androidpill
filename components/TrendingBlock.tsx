@@ -8,7 +8,7 @@ import { MdOutlineAccessTime } from "react-icons/md";
 function TrendingBlock({ trendingPost }: any) {
   return (
     <div className="flex text-zinc-50 my-3 md:my-5">
-      <span className="block relative w-1/3 p-2 h-[120px] rounded">
+      <span className="block relative w-1/4 md:w-1/3 py-2 h-[120px] rounded">
         <span className="block relative w-full p-2 h-full ">
           <Image
             src={trendingPost.frontMatter.thumbnailUrl}
@@ -19,7 +19,7 @@ function TrendingBlock({ trendingPost }: any) {
         </span>
       </span>
 
-      <span className="p-2 w-2/3 ml-5  flex flex-col justify-center">
+      <span className="p-2 w-3/4 md:w-2/3 ml-5  flex flex-col justify-center">
         <CategoryPill type={trendingPost.frontMatter.category} />
 
         <Link passHref href={`/${trendingPost.slug}`}>
