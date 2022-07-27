@@ -63,7 +63,7 @@ const PostPage = ({
         </h1>
         <p className="text-sm text-zinc-400 flex items-center  justify-center mb-10">
           <MdOutlineAccessTime className="mr-2 text-xl" />{" "}
-          <span className="fon-semibold">{date}</span>
+          <span className="fon-semibold">{date.slice(0, 10)}</span>
         </p>
         <div className="relative w-full my-10 h-[220px] md:h-[300px] mx-auto lg:h-[550px]  ">
           <Image
