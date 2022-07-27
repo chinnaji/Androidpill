@@ -16,7 +16,7 @@ function OtherPostsSection({ otherPosts }: any) {
   };
 
   return (
-    <section className="my-8 py-10 max-w-6xl mx-auto ">
+    <section className="my-5 py-10 max-w-6xl mx-auto ">
       {partitionPosts.map((partitionPost: any, index: any) => (
         <div key={index}>
           {index === 10 ? (
