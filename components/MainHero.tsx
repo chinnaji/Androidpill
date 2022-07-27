@@ -34,7 +34,7 @@ function MainHero({ heroPosts }: any) {
 
                 <Link passHref href={`/${firstPostItem.slug}`}>
                   <a>
-                    <h3 className="font-semibold text-xl mt-3 mb-2 hover:text-teal cursor-pointer transition-all ease-linear">
+                    <h3 className="font-semibold text-md md:text-xl mt-3 mb-2 hover:text-teal cursor-pointer transition-all ease-linear">
                       {firstPostItem.frontMatter.title}
                     </h3>
                   </a>
@@ -76,6 +76,9 @@ function MainHero({ heroPosts }: any) {
                           </h3>
                         </a>
                       </Link>
+                      <p className="text-sm mb-3 md:hidden block">
+                        {item.frontMatter.description}
+                      </p>
                     </span>
                   </div>
                 </div>
