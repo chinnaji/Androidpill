@@ -15,7 +15,7 @@ function MainHero({ heroPosts }: any) {
         </h2>
         {/* {} */}
         {/* first and large post banner */}
-        <div className="w-full lg:w-1/2 p-1 md:pt-4 md:h-[400px] h-[320px] ">
+        <div className="w-full lg:w-1/2 p-1 md:pt-4 md:h-[400px] h-[250px] ">
           <span className="block relative w-full h-full rounded">
             <Image
               src={firstPostItem.frontMatter.thumbnailUrl}
