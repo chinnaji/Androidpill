@@ -65,12 +65,12 @@ const PostPage = ({
           <MdOutlineAccessTime className="mr-2 text-xl" />{" "}
           <span className="fon-semibold">{date}</span>
         </p>
-        <div className="relative w-full mt-5 mb-10 h-[220px] md:h-[300px] mx-auto lg:h-[500px]  ">
+        <div className="relative w-full my-10 h-[220px] md:h-[300px] mx-auto lg:h-[550px]  ">
           <Image
             src={thumbnailUrl}
             layout="fill"
             alt={title}
-            className="rounded "
+            className="rounded-md "
             objectFit="cover"
           />
         </div>

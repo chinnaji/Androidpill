@@ -27,7 +27,7 @@ interface indexProps {
 const Home = ({ posts }: indexProps) => {
   // console.log(posts.slice(5, 11));
   const heroPosts = posts.slice(0, 5);
-  // console.log(posts);
+
   return (
     <main className="px-3 md:px-2">
       <Head>
@@ -90,16 +90,7 @@ const Home = ({ posts }: indexProps) => {
         />
       </Head>
 
-      <MainHero
-        heroPosts={heroPosts
-          .sort((a, b) => {
-            return (
-              new Date(b.frontMatter.date).getTime() -
-              new Date(a.frontMatter.date).getTime()
-            );
-          })
-          .reverse()}
-      />
+      <MainHero heroPosts={heroPosts} />
       <TrendingSection trendingPosts={posts.slice(5, 11)} />
     </main>
   );
@@ -121,9 +112,16 @@ export const getStaticProps = async () => {
     };
   });
 
+  //
+  function sortFunction(a: any, b: any) {
+    var dateA = Date.parse(a.frontMatter.date);
+    var dateB = Date.parse(b.frontMatter.date);
+    return dateA > dateB ? -1 : 1;
+  }
+  const response = posts.sort(sortFunction);
   return {
     props: {
-      posts,
+      posts: response,
     },
   };
 };
