@@ -8,6 +8,7 @@ import Head from "next/head";
 import TrendingSection from "../components/TrendingSection";
 import OtherPostsSection from "../components/OtherPostsSection";
 import NoticeBoard from "../components/NoticeBoard";
+import NativeBanners from "../components/ads/NativeBanners";
 export interface postData {
   frontMatter: FrontMatter;
   slug: string;
@@ -30,7 +31,7 @@ const Home = ({ posts }: indexProps) => {
   const heroPosts = posts.slice(0, 5);
 
   return (
-    <main className="px-3 md:px-2">
+    <main className=" md:px-2 max-w-6xl mx-auto">
       <Head>
         <meta charSet="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -93,7 +94,9 @@ const Home = ({ posts }: indexProps) => {
       <NoticeBoard />
 
       <MainHero heroPosts={heroPosts} />
+
       <TrendingSection trendingPosts={posts.slice(5, 11)} />
+      <NativeBanners type={2} />
       <OtherPostsSection otherPosts={posts.slice(12)} />
     </main>
   );
