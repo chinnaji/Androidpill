@@ -6,6 +6,7 @@ import Link from "next/link";
 import { MdOutlineAccessTime } from "react-icons/md";
 
 function OtherPostBlock({ otherPost }: any) {
+  console.log(otherPost, "otherPostotherPostotherPostotherPost");
   return (
     <section
       className="flex flex-wrap md:justify-between justify-center items-center text-zinc-200 md:my-0 my-10  
@@ -15,9 +16,9 @@ function OtherPostBlock({ otherPost }: any) {
       <div className="block relative w-full lg:w-1/4 my-5 lg:my-2 p-2 md:h-[350px] lg:h-[220px] h-[250px] rounded">
         <span className="block relative w-full p-2 h-full ">
           <Image
-            src={otherPost.node.featuredImage.node.sourceUrl}
+            src={otherPost.frontMatter.thumbnailUrl}
             layout="fill"
-            alt={otherPost.node.featuredImage.node.altText}
+            alt={otherPost.frontMatter.title}
             className="rounded"
             // objectFit="cover"
           />
@@ -25,11 +26,11 @@ function OtherPostBlock({ otherPost }: any) {
       </div>
       {/* content */}
       <span className="p-2  w-full lg:w-1/2 lg:-ml-5">
-        <CategoryPill type={otherPost.node?.categories?.edges[0].node.name} />{" "}
-        <Link passHref href={`/${otherPost?.node?.slug}`}>
+        <CategoryPill type={otherPost.frontMatter.category} />{" "}
+        <Link passHref href={`/${otherPost.slug}`}>
           <a>
             <h3 className="font-semibold text-xl text-md mt-3 mb-2 cursor-pointer hover:text-teal">
-              {otherPost.node?.title}
+              {otherPost.frontMatter.title}
             </h3>
           </a>
         </Link>
@@ -42,7 +43,7 @@ function OtherPostBlock({ otherPost }: any) {
         />
         <p className="text-sm text-zinc-500 flex items-center ">
           <MdOutlineAccessTime className="mr-2 text-xl" />{" "}
-          <span>{otherPost.node?.date.slice(0, 10)}</span>
+          <span>{otherPost.frontMatter.date.slice(0, 10)}</span>
         </p>
       </span>
       {/* ad space */}

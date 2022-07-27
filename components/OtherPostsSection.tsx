@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import OtherPostBlock from "./OtherPostBlock";
 import { CgPushDown, CgPushUp } from "react-icons/cg";
-import NativeBanners from "./ads/NativeBanners";
+import Nb from "./ads/NativeBanners";
 
 function OtherPostsSection({ otherPosts }: any) {
   const [start, setStart] = useState(0);
@@ -17,7 +17,17 @@ function OtherPostsSection({ otherPosts }: any) {
   };
 
   return (
-    <section className="my-10 py-10">
+    <section className="my-10 py-10 max-w-6xl mx-auto  px-3">
+      {partitionPosts.map((partitionPost: any, index: any) => (
+        <div key={index}>
+          {index === 10 ? (
+            <>
+              <Nb type={3} />
+            </>
+          ) : null}
+          <OtherPostBlock otherPost={partitionPost} key={index} />
+        </div>
+      ))}{" "}
       <div className="flex items-center justify-center gap-x-4">
         {/* only show 'show more button' whben partitionPost.length is less  than otherPosts.length  */}
         {partitionPosts.length === otherPosts.length ? (
@@ -45,7 +55,7 @@ function OtherPostsSection({ otherPosts }: any) {
       </div>
       <div className="mt-10">
         {" "}
-        <NativeBanners type={2} />
+        <Nb type={2} />
       </div>
     </section>
   );

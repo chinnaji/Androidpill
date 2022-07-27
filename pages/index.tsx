@@ -6,7 +6,8 @@ import Image from "next/image";
 import MainHero from "../components/MainHero";
 import Head from "next/head";
 import TrendingSection from "../components/TrendingSection";
-
+import OtherPostsSection from "../components/OtherPostsSection";
+import NoticeBoard from "../components/NoticeBoard";
 export interface postData {
   frontMatter: FrontMatter;
   slug: string;
@@ -89,9 +90,11 @@ const Home = ({ posts }: indexProps) => {
           content="https://i0.wp.com/www.androidpill.com/wp-content/uploads/2021/01/cropped-Untitled-4.png?fit=270%2C270&amp;ssl=1"
         />
       </Head>
+      <NoticeBoard />
 
       <MainHero heroPosts={heroPosts} />
-      <TrendingSection trendingPosts={posts.slice(5, 13)} />
+      <TrendingSection trendingPosts={posts.slice(5, 11)} />
+      <OtherPostsSection otherPosts={posts.slice(12)} />
     </main>
   );
 };
