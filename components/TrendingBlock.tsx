@@ -19,7 +19,7 @@ function TrendingBlock({ trendingPost }: any) {
         </span>
       </span>
 
-      <span className="p-2 w-2/3 ml-5">
+      <span className="p-2 w-2/3 ml-5  flex flex-col justify-center">
         <CategoryPill type={trendingPost.frontMatter.category} />
 
         <Link passHref href={`/${trendingPost.slug}`}>
@@ -29,10 +29,10 @@ function TrendingBlock({ trendingPost }: any) {
             </h3>
           </a>
         </Link>
-        <p className="text-sm text-zinc-500 flex items-center ">
+        {/* <p className="text-sm text-zinc-500 flex items-center ">
           <MdOutlineAccessTime className="mr-2 text-xl" />{" "}
           <span>{trendingPost.frontMatter.date}</span>
-        </p>
+        </p> */}
       </span>
     </div>
   );
