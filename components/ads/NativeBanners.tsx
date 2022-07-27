@@ -2,14 +2,13 @@ import React, { useState } from "react";
 import Script from "next/script";
 
 function Nb({ type }: any) {
-  // const [isLoaded, setIsLoaded] = useState(false);
   return (
     <div className="py-16 relative ">
       {" "}
       {/* {isLoaded ? ( */}
-      <h4 className="text-center text-base font-semibold text-zinc-500 underline pl-3">
+      {/* <h4 className="text-center text-base font-semibold text-zinc-500 underline pl-3">
         ADVERTISEMENTS
-      </h4>
+      </h4> */}
       {/* ) : null} */}
       {type === 1 ? (
         // 4x1 native banner ad
