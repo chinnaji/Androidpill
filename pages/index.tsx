@@ -91,7 +91,7 @@ const Home = ({ posts }: indexProps) => {
       </Head>
 
       <MainHero heroPosts={heroPosts} />
-      <TrendingSection trendingPosts={posts.slice(5, 11)} />
+      <TrendingSection trendingPosts={posts.slice(5, 13)} />
     </main>
   );
 };
