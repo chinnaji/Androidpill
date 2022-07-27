@@ -8,16 +8,15 @@ function OtherPostsSection({ otherPosts }: any) {
   const [end, setEnd] = useState(5);
   const partitionPosts = otherPosts.slice(start, end);
 
-  const showMore = () => {
-    setEnd((prevState) => prevState + 10);
-    // nativeBannerAdsStart + 1;
-  };
-  const showLess = () => {
-    setEnd((prevState) => prevState - 10);
-  };
+  // const showMore = () => {
+  //   setEnd((prevState) => prevState + 10);
+  // };
+  // const showLess = () => {
+  //   setEnd((prevState) => prevState - 10);
+  // };
 
   return (
-    <section className="my-10 py-10 max-w-6xl mx-auto  px-3">
+    <section className="my-10 py-10 max-w-6xl mx-auto ">
       {partitionPosts.map((partitionPost: any, index: any) => (
         <div key={index}>
           {index === 10 ? (
