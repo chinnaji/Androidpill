@@ -57,15 +57,15 @@ const PostPage = ({
         <meta name="twitter:data1" content="chibuike Nnaji" />
         <meta name="twitter:label2" content="Est. reading time" />
       </Head>
-      <article className="mt-4 max-w-6xl mx-auto p-2 blogpost">
-        <h1 className="lg:text-4xl text-3xl font-semibold mt-16 lg:mt-10 mb-5 text-zinc-100 text-center">
+      <article className="mt-4 max-w-6xl mx-auto py-2 px-3 blogpost">
+        <h1 className="lg:text-4xl text-3xl font-semibold mt-10 mb-5 text-zinc-100 text-center">
           {title}
         </h1>
         <p className="text-sm text-zinc-400 flex items-center  justify-center mb-10">
           <MdOutlineAccessTime className="mr-2 text-xl" />{" "}
           <span className="fon-semibold">{date}</span>
         </p>
-        <div className="relative w-full mt-5 mb-10 h-[250px] md:h-[300px] mx-auto lg:h-[500px]  ">
+        <div className="relative w-full mt-5 mb-10 h-[240px] md:h-[300px] mx-auto lg:h-[500px]  ">
           <Image
             src={thumbnailUrl}
             layout="fill"
