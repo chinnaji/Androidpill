@@ -7,41 +7,35 @@ function OtherHero({ heroPosts }: any) {
   var randomPostIndex = Math.floor(Math.random() * 100);
   return (
     <section className="flex flex-wrap md:my-10 text-zinc-100">
-      <span className="block relative w-full md:h-[500px] h-[550px] rounded">
+      <span className="block relative w-full md:h-[500px] h-[350px] rounded">
         <Image
-          src={heroPosts[0].node?.featuredImage.node.sourceUrl || te}
+          src={heroPosts.frontMatter.thumbnailUrl}
           // firstPostItem.node.featuredImage.node.sourceUrl
           layout="fill"
-          alt={heroPosts[0].node?.featuredImage.node.altText || "androidpill"}
+          alt={heroPosts.frontMatter.title}
           className="rounded-md"
           objectFit="cover"
         />
         <div className="absolute inset-0 p-4  rounded from-dark bg-gradient-to-t flex items-end">
           <span className="block">
             <div>
-              <CategoryPill
-                type={heroPosts[0].node?.categories?.edges[0].node.name}
-              />
+              <CategoryPill type={heroPosts.frontMatter.category} />
             </div>
 
-            <Link passHref href={`/${heroPosts[0]?.node?.slug}`}>
+            <Link passHref href={`/${heroPosts.slug}`}>
               <a>
                 <h3 className="font-semibold text-xl mt-3 mb-2 hover:text-teal cursor-pointer">
-                  {heroPosts[0]?.node?.title}
+                  {heroPosts.frontMatter.title}
                 </h3>
               </a>
             </Link>
-            {/* <p className="text-sm">{heroPosts[0].node.excerpt}</p> */}
-            <div
-              className="text-sm mb-3 text-zinc-200"
-              dangerouslySetInnerHTML={{
-                __html: heroPosts[0]?.node?.excerpt,
-              }}
-            />
+            <p className="text-sm mb-3 text-zinc-200">
+              {heroPosts.frontMatter.description}
+            </p>
           </span>
         </div>
       </span>
-      <div className="p-2 w-full md:w-1/2 flex flex-wrap"></div>
+      {/* <div className="p-2 w-full md:w-1/2 flex flex-wrap"></div> */}
     </section>
   );
 }
