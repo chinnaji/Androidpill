@@ -6,6 +6,8 @@
 ![lsd](https://user-images.githubusercontent.com/67190735/181394633-d120d388-2c74-44fc-bbf9-a841ad60f1e3.gif)
 
  **Check it out - [Live Preview ](https://androidpill.com)**  
+ 
+ [View Initial Repo](https://github.com/chinnaji/androidpill-wordpress/tree/f2d79a4db46f1a987f325f4d7fcb588f39326de6)
 
 ## SCREENSHOT 👇👇  
 
