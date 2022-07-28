@@ -15,14 +15,14 @@ function NoticeBoard() {
           issues. I am working hard to get them back . In the mean time, some
           pages and files may not load correctly.
         </p>
-        <p className="mb-8 font-semibold  ">Please bear with me.</p>
-        <Image
+        <p className=" font-semibold ">Please bear with me.</p>
+        {/* <Image
           src="/images/sad.gif"
           className="rounded-md"
           alt="sad gif"
           width={400}
           height={200}
-        />
+        /> */}
       </div>
     </section>
   );
