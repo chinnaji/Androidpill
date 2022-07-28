@@ -8,20 +8,6 @@ function App({ Component, pageProps }: AppProps) {
   return (
     <>
       <MainLayout>
-        <Script
-          strategy="afterInteractive"
-          async
-          src="https://www.googletagmanager.com/gtag/js?id=G-8M0MV4GMY6"
-        />
-        <Script strategy="afterInteractive" id="google-analytics">
-          {`
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-8M0MV4GMY6');
- `}
-        </Script>
         <Component {...pageProps} />
       </MainLayout>
       {/* adsterra social bar ad */}

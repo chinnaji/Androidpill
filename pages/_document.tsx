@@ -1,13 +1,29 @@
 import React from "react";
 import Document, { Html, Head, Main, NextScript } from "next/document";
-
+import Script from "next/script";
 function MyDocument() {
   return (
     <Html lang="en">
       <Head>
-        <link rel="manifest" href="/manifest.json" />
+        {/* <link rel="manifest" href="/manifest.json" />
         <link rel="apple-touch-icon" href="/icon.png"></link>
-        <meta name="theme-color" content="#fff" />
+        <meta name="theme-color" content="#fff" /> */}
+        <Script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-8M0MV4GMY6"
+        />
+        <Script
+          id="google-analytics"
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+            
+              gtag('config', 'G-8M0MV4GMY6');
+          `,
+          }}
+        />
       </Head>
       <body className="bg-[#111111] relative text-zinc-100">
         <Main />
