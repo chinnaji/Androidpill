@@ -79,7 +79,7 @@ const androidApps = ({ posts }: postPageProps) => {
       <OtherHero pageHeroPost={posts[0]} />
       {/* <OtherPostsSection otherPosts={posts.slice(3)} /> */}
 
-      {/* <NativeBanners type={2} /> */}
+      <NativeBanners type={2} />
       <OtherPostsSection otherPosts={posts.slice(1)} />
     </main>
   );

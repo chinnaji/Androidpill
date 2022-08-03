@@ -75,7 +75,7 @@ const Home = ({ posts }: postPageProps) => {
       <MainHero heroPosts={heroPosts} />
 
       <TrendingSection trendingPosts={posts.slice(5, 11)} />
-      {/* <NativeBanners type={2} /> */}
+      <NativeBanners type={2} />
       <OtherPostsSection otherPosts={posts.slice(12)} />
       <NoticeBoard />
     </main>
