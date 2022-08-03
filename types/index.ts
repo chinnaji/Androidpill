@@ -46,3 +46,10 @@ export interface categoryPillProps {
 export interface SocialBlockProps {
   type: "facebook" | "youtube";
 }
+
+export interface postScreenshotProps {
+  imageData: {
+    url: string;
+    alt: string;
+  }[];
+}
