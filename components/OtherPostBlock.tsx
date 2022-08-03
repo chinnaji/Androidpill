@@ -4,9 +4,9 @@ import te from "../images/asset.jpg";
 import CategoryPill from "./CategoryPill";
 import Link from "next/link";
 import { MdOutlineAccessTime } from "react-icons/md";
+import { otherPostProp } from "../types";
 
-function OtherPostBlock({ otherPost }: any) {
-  console.log(otherPost, "otherPostotherPostotherPostotherPost");
+function OtherPostBlock({ otherPost }: otherPostProp) {
   return (
     <section
       className="flex flex-wrap md:justify-between justify-center items-center text-zinc-200 md:my-0 my-10  
@@ -34,17 +34,13 @@ function OtherPostBlock({ otherPost }: any) {
             </h3>
           </a>
         </Link>
-        {/* <p className="text-zinc-400 text-sm">By Admin</p> */}
-        <div
-          className="text-sm mb-3 text-zinc-300"
-          dangerouslySetInnerHTML={{
-            __html: otherPost?.node?.excerpt,
-          }}
-        />
-        <p className="text-sm text-zinc-500 flex items-center ">
+        <p className="text-zinc-400 text-sm">
+          {otherPost.frontMatter.description}
+        </p>
+        {/* <p className="text-sm text-zinc-500 flex items-center ">
           <MdOutlineAccessTime className="mr-2 text-xl" />{" "}
           <span>{otherPost.frontMatter.date.slice(0, 10)}</span>
-        </p>
+        </p> */}
       </span>
       {/* ad space */}
       <div className=" md:block hidden relative w-full lg:w-1/5 p-2 h-[180px] md:h-[150px] rounded mdmy-0 my-16">

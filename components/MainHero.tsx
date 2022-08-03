@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
-import te from "../images/asset.jpg";
 import CategoryPill from "./CategoryPill";
 import Link from "next/link";
 
-function MainHero({ heroPosts }: any) {
+import { postProps } from "../types";
+
+function MainHero({ heroPosts }: postProps) {
   const [firstPostItem, ...remPosts] = heroPosts;
   // console.log(heroPosts);
   return (
@@ -50,7 +51,7 @@ function MainHero({ heroPosts }: any) {
         {/* second right 4s */}
         <div className="w-full pt-1.5 lg:w-1/2 ">
           <section className="flex flex-wrap ">
-            {remPosts.map((item: any, index: any) => (
+            {remPosts.map((item, index) => (
               <div
                 className="  w-full md:w-1/2 h-[250px] md:h-[300px] lg:h-[200px] rounded p-2 lg:m-0 my-2 "
                 key={index}

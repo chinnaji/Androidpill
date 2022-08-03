@@ -1,6 +1,7 @@
 import React from "react";
+import { readAlsoProps } from "../types";
 
-function ReadAlso({ url, text }: any) {
+function ReadAlso({ url, text }: readAlsoProps) {
   return (
     <a
       href={url}

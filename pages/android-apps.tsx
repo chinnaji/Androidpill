@@ -1,33 +1,18 @@
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
-import Link from "next/link";
-import Image from "next/image";
-import MainHero from "../components/MainHero";
+// import Link from "next/link";
+// import Image from "next/image";
+// import MainHero from "../components/MainHero";
 import Head from "next/head";
-import TrendingSection from "../components/TrendingSection";
-import OtherPostsSection from "../components/OtherPostsSection";
-import NoticeBoard from "../components/NoticeBoard";
+// import TrendingSection from "../components/TrendingSection";
+// import OtherPostsSection from "../components/OtherPostsSection";
+// import NoticeBoard from "../components/NoticeBoard";
 import NativeBanners from "../components/ads/NativeBanners";
 import OtherHero from "../components/OtherHero";
-export interface postData {
-  frontMatter: FrontMatter;
-  slug: string;
-}
-export interface FrontMatter {
-  title: string;
-  date: string;
-  description: string;
-  thumbnailUrl: string;
-  author: string;
-  category: string;
-}
+import { postPageProps } from "../types";
 
-interface indexProps {
-  posts: postData[];
-}
-
-const androidApps = ({ posts }: indexProps) => {
+const androidApps = ({ posts }: postPageProps) => {
   return (
     <main className=" px-2 max-w-6xl mx-auto">
       <Head>
@@ -90,7 +75,7 @@ const androidApps = ({ posts }: indexProps) => {
       <h1 className="text-center text-zinc-100 font-semibold text-2xl md:text-3xl my-10">
         ANDROID APPS 🍏
       </h1>
-      <OtherHero heroPosts={posts[0]} />
+      <OtherHero pageHeroPost={posts[0]} />
       {/* <OtherPostsSection otherPosts={posts.slice(1)} /> */}
 
       <NativeBanners type={2} />

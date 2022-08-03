@@ -9,24 +9,9 @@ import TrendingSection from "../components/TrendingSection";
 import OtherPostsSection from "../components/OtherPostsSection";
 import NoticeBoard from "../components/NoticeBoard";
 import NativeBanners from "../components/ads/NativeBanners";
-export interface postData {
-  frontMatter: FrontMatter;
-  slug: string;
-}
-export interface FrontMatter {
-  title: string;
-  date: string;
-  description: string;
-  thumbnailUrl: string;
-  author: string;
-  category: string;
-}
+import { postPageProps } from "../types";
 
-interface indexProps {
-  posts: postData[];
-}
-
-const Home = ({ posts }: indexProps) => {
+const Home = ({ posts }: postPageProps) => {
   // console.log(posts.slice(5, 11));
   const heroPosts = posts.slice(0, 5);
 
