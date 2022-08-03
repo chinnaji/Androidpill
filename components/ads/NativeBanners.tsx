@@ -3,7 +3,7 @@ import Script from "next/script";
 
 function Nb({ type }: any) {
   return (
-    <div className="py-16 relative ">
+    <div className="py-10 relative ">
       {" "}
       {/* {isLoaded ? ( */}
       {/* <h4 className="text-center text-base font-semibold text-zinc-500 underline pl-3">

@@ -71,13 +71,13 @@ const Home = ({ posts }: postPageProps) => {
           content="https://i0.wp.com/www.androidpill.com/wp-content/uploads/2021/01/cropped-Untitled-4.png?fit=270%2C270&amp;ssl=1"
         />
       </Head>
-      <NoticeBoard />
 
       <MainHero heroPosts={heroPosts} />
 
       <TrendingSection trendingPosts={posts.slice(5, 11)} />
-      <NativeBanners type={2} />
+      {/* <NativeBanners type={2} /> */}
       <OtherPostsSection otherPosts={posts.slice(12)} />
+      <NoticeBoard />
     </main>
   );
 };
