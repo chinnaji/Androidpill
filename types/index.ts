@@ -35,3 +35,6 @@ export interface readAlsoProps {
   url: string;
   text: string;
 }
+export interface categoryPillProps {
+  type: string;
+}

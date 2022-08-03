@@ -1,7 +1,8 @@
 import React from "react";
-import Link from "next/link";
+// import Link from "next/link";
+import { categoryPillProps } from "../types";
 
-function CategoryPill({ type }: { type: string }) {
+function CategoryPill({ type }: categoryPillProps) {
   return (
     // <Link passHref href={`/${type}`}>
     <span
