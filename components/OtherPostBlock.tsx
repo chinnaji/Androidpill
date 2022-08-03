@@ -37,10 +37,6 @@ function OtherPostBlock({ otherPost }: otherPostProp) {
         <p className="text-zinc-400 text-sm">
           {otherPost.frontMatter.description}
         </p>
-        {/* <p className="text-sm text-zinc-500 flex items-center ">
-          <MdOutlineAccessTime className="mr-2 text-xl" />{" "}
-          <span>{otherPost.frontMatter.date.slice(0, 10)}</span>
-        </p> */}
       </span>
       {/* ad space */}
       <div className=" md:block hidden relative w-full lg:w-1/5 p-2 h-[180px] md:h-[150px] rounded mdmy-0 my-16">
