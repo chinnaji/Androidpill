@@ -10,7 +10,7 @@ import OtherPostsSection from "../components/OtherPostsSection";
 import NoticeBoard from "../components/NoticeBoard";
 import NativeBanners from "../components/ads/NativeBanners";
 import OtherHero from "../components/OtherHero";
-import { postPageProps } from "../types";
+import { postPageProps, postData } from "../types";
 
 const androidApps = ({ posts }: postPageProps) => {
   return (

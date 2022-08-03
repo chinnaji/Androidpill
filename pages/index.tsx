@@ -1,8 +1,3 @@
-import fs from "fs";
-import path from "path";
-import matter from "gray-matter";
-import Link from "next/link";
-import Image from "next/image";
 import MainHero from "../components/MainHero";
 import Head from "next/head";
 import TrendingSection from "../components/TrendingSection";
@@ -10,7 +5,7 @@ import OtherPostsSection from "../components/OtherPostsSection";
 import NoticeBoard from "../components/NoticeBoard";
 import NativeBanners from "../components/ads/NativeBanners";
 import { postPageProps } from "../types";
-
+import { getPosts } from "../utils/getPosts";
 const Home = ({ posts }: postPageProps) => {
   // console.log(posts.slice(5, 11));
   const heroPosts = posts.slice(0, 5);
@@ -88,28 +83,7 @@ const Home = ({ posts }: postPageProps) => {
 };
 
 export const getStaticProps = async () => {
-  const files = fs.readdirSync(path.join("posts"));
-
-  const posts = files.map((filename) => {
-    const markdownWithMeta = fs.readFileSync(
-      path.join("posts", filename),
-      "utf-8"
-    );
-    const { data: frontMatter } = matter(markdownWithMeta);
-
-    return {
-      frontMatter,
-      slug: filename.split(".")[0],
-    };
-  });
-
-  //
-  function sortFunction(a: any, b: any) {
-    var dateA = Date.parse(a.frontMatter.date);
-    var dateB = Date.parse(b.frontMatter.date);
-    return dateA > dateB ? -1 : 1;
-  }
-  const response = posts.sort(sortFunction);
+  const response = await getPosts("none");
   return {
     props: {
       posts: response,
