@@ -42,3 +42,7 @@ export interface downloadLinksProps extends readanddownloadProps {}
 export interface categoryPillProps {
   type: string;
 }
+
+export interface SocialBlockProps {
+  type: "facebook" | "youtube";
+}

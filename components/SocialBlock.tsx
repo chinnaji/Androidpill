@@ -1,9 +1,7 @@
 import React from "react";
 import { BsFacebook, BsYoutube } from "react-icons/bs";
 
-type SocialBlockProps = {
-  type: "facebook" | "youtube";
-};
+import { SocialBlockProps } from "../types";
 
 function SocialBlock({ type }: SocialBlockProps) {
   return type === "facebook" ? (
