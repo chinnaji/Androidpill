@@ -1,10 +1,7 @@
 import React from "react";
+import { downloadLinksProps } from "../types";
 
-type Props = {
-  url: string;
-  text: string;
-};
-function DownloadLinks({ url, text }: Props) {
+function DownloadLinks({ url, text }: downloadLinksProps) {
   return (
     <a
       href={url}

@@ -31,10 +31,14 @@ export interface otherPostProp {
   otherPost: postData;
 }
 
-export interface readAlsoProps {
+interface readanddownloadProps {
   url: string;
   text: string;
 }
+
+export interface readAlsoProps extends readanddownloadProps {}
+export interface downloadLinksProps extends readanddownloadProps {}
+
 export interface categoryPillProps {
   type: string;
 }
