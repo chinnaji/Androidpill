@@ -15,7 +15,6 @@ import { postPageProps } from "../types";
 const androidApps = ({ posts }: postPageProps) => {
   return (
     <main className=" px-2 max-w-6xl mx-auto">
-      {posts.length}
       <Head>
         <meta charSet="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
