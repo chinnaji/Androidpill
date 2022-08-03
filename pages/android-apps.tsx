@@ -11,6 +11,7 @@ import Head from "next/head";
 import NativeBanners from "../components/ads/NativeBanners";
 import OtherHero from "../components/OtherHero";
 import { postPageProps } from "../types";
+import { getPosts } from "../utils/getPosts";
 
 const androidApps = ({ posts }: postPageProps) => {
   return (
@@ -85,31 +86,8 @@ const androidApps = ({ posts }: postPageProps) => {
 };
 
 export const getStaticProps = async () => {
-  const files = fs.readdirSync(path.join("posts"));
+  const response = await getPosts("Android Apps");
 
-  const posts = files.map((filename) => {
-    const markdownWithMeta = fs.readFileSync(
-      path.join("posts", filename),
-      "utf-8"
-    );
-    const { data: frontMatter } = matter(markdownWithMeta);
-
-    return {
-      frontMatter,
-      slug: filename.split(".")[0],
-    };
-  });
-
-  function sortFunction(a: any, b: any) {
-    var dateA = Date.parse(a.frontMatter.date);
-    var dateB = Date.parse(b.frontMatter.date);
-    return dateA > dateB ? -1 : 1;
-  }
-  const response = posts
-    .filter((post) => {
-      return post.frontMatter.category === "Android Apps";
-    })
-    .sort(sortFunction);
   return {
     props: {
       posts: response,

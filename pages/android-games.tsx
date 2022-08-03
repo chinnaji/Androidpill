@@ -11,6 +11,7 @@ import NoticeBoard from "../components/NoticeBoard";
 import NativeBanners from "../components/ads/NativeBanners";
 import OtherHero from "../components/OtherHero";
 import { postPageProps, postData } from "../types";
+import { getPosts } from "../utils/getPosts";
 
 const androidApps = ({ posts }: postPageProps) => {
   return (
@@ -85,31 +86,7 @@ const androidApps = ({ posts }: postPageProps) => {
 };
 
 export const getStaticProps = async () => {
-  const files = fs.readdirSync(path.join("posts"));
-
-  const posts = files.map((filename) => {
-    const markdownWithMeta = fs.readFileSync(
-      path.join("posts", filename),
-      "utf-8"
-    );
-    const { data: frontMatter } = matter(markdownWithMeta);
-
-    return {
-      frontMatter,
-      slug: filename.split(".")[0],
-    };
-  });
-
-  function sortFunction(a: any, b: any) {
-    var dateA = Date.parse(a.frontMatter.date);
-    var dateB = Date.parse(b.frontMatter.date);
-    return dateA > dateB ? -1 : 1;
-  }
-  const response = posts
-    .filter((post) => {
-      return post.frontMatter.category === "Android Games";
-    })
-    .sort(sortFunction);
+  const response = getPosts("Android Games");
   return {
     props: {
       posts: response,
