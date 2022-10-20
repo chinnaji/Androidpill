@@ -1,5 +1,7 @@
 export const GA_TRACKING_ID = "G-WCV7NZ3MSE";
 
+declare const window: any;
+
 // https://developers.google.com/analytics/devguides/collection/gtagjs/pages
 export const pageview = (url: URL): void => {
   window.gtag("config", GA_TRACKING_ID, {
