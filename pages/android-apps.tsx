@@ -30,7 +30,7 @@ const androidApps = ({ posts }: postPageProps) => {
           content="bXuLD_w0LOKR-Gxt9xO3MsHXxrkB7ekzNvBJX-kuoPQ"
         />
 
-        <title>Aadroid Apps</title>
+        <title>Android Apps</title>
         <meta
           name="description"
           content="Download latest games &amp; Apks Gta v mobile,100 best ppsspp download games link, Shadow hunter apk mod, Asphalt nitro unlimited coins - Androidpill.com"
