@@ -9,6 +9,13 @@ function MyDocument() {
   return (
     <Html lang="en">
       <Head>
+        <Script
+          src={
+            "//stickervillain.com/15/14/bb/1514bb63026873a9d4c7be3578d7c447.js"
+          }
+          strategy="afterInteractive"
+        />
+
         {/* <link rel="manifest" href="/manifest.json" />
         <link rel="apple-touch-icon" href="/icon.png"></link>
         <meta name="theme-color" content="#fff" /> */}
